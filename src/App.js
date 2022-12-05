@@ -1,6 +1,25 @@
 import "./App.css";
 
 export default function App() {
+  const showData = (result) => {
+    for (let fillValue in result) {
+      if (document.querySelector("#" + fillValue)) {
+        document.querySelector("#" + fillValue).value = result[fillValue];
+      }
+    }
+  };
+
+  const checkarCEP = (evento) => {
+    const cep = evento.target.value.replace(/[0-9]{5}-[\d]{3}/g, "");
+    const search = `https://viacep.com.br/ws/${cep}/json/`;
+
+    fetch(search)
+      .then((res) => res.json())
+      .then((data) => {
+        showData(data);
+      });
+  };
+
   return (
     <div className="container">
       <h3>Formulário | Endereço de Entrega</h3>
@@ -8,31 +27,44 @@ export default function App() {
       <form>
         <div className="container-input">
           <label>Nome Completo</label>
-          <input type={"text"} placeholder={"Ex.: Wendell Thomas Teske"} />
+          <input
+            id="nome"
+            type={"text"}
+            placeholder={"Ex.: Wendell Thomas Teske"}
+          />
         </div>
         <div className="container-input">
           <label>Email</label>
-          <input type={"email"} placeholder={"Ex.: wendelltteske@gmail.com"} />
+          <input
+            id="email"
+            type={"email"}
+            placeholder={"Ex.: wendelltteske@gmail.com"}
+          />
         </div>
         <div className="container-input">
           <label>Data de Entrega</label>
-          <input type={"date"} />
+          <input id="data_entrega" type={"date"} />
         </div>
         <div className="container-input">
           <label>CEP</label>
-          <input type={"text"} placeholder={"_ _ _ _ _ - _ _"} />
+          <input
+            id="cep"
+            onBlur={checkarCEP}
+            type={"text"}
+            placeholder={"_ _ _ _ _ - _ _"}
+          />
         </div>
         <div className="container-input">
           <label>Estado</label>
-          <input type={"text"} disabled />
+          <input id="uf" type={"text"} disabled />
         </div>
         <div className="container-input">
           <label>Cidade</label>
-          <input type={"text"} disabled />
+          <input id="localidade" type={"text"} disabled />
         </div>
         <div className="container-input">
           <label>Bairro</label>
-          <input type={"text"} disabled />
+          <input id="bairro" type={"text"} disabled />
         </div>
         <div className="container-input">
           <label>N de Endereço</label>
@@ -40,7 +72,11 @@ export default function App() {
         </div>
         <div className="container-input">
           <label>Complemento</label>
-          <input type={"text"} placeholder={"Ex.: Posto de Saúde"} />
+          <input
+            id="complemento"
+            type={"text"}
+            placeholder={"Ex.: Posto de Saúde"}
+          />
         </div>
       </form>
       <div className="container-buttons">
