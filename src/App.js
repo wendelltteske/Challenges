@@ -1,4 +1,5 @@
 import "./App.css";
+import { FaRegPaperPlane, FaRegTimesCircle } from "react-icons/fa";
 
 export default function App() {
   const showData = (result) => {
@@ -80,7 +81,7 @@ export default function App() {
           </div>
         </div>
         <div className="line-4">
-          <div className="x">
+          <div className="input-container" style={{ width: "30%" }}>
             <label>Número de Endereço</label>
             <input id="num_endereco" type={"text"} placeholder={"Ex.: 474"} />
           </div>
@@ -96,9 +97,13 @@ export default function App() {
       </form>
       <div className="button-container">
         <button className="previous" onClick={clearData}>
+          <FaRegTimesCircle style={{ marginRight: "10px" }} />
           Limpar Campos
         </button>
-        <button className="send">Enviar</button>
+        <button className="send">
+          <FaRegPaperPlane style={{ marginRight: "10px" }} />
+          Enviar
+        </button>
       </div>
     </div>
   );
