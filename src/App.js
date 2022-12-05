@@ -28,72 +28,77 @@ export default function App() {
     document.getElementById("uf").value = "";
     document.getElementById("localidade").value = "";
     document.getElementById("bairro").value = "";
-    document.getElementById("n_endereco").value = "";
+    document.getElementById("num_endereco").value = "";
     document.getElementById("complemento").value = "";
   };
 
   return (
     <div className="container">
-      <h3>Formulário | Endereço de Entrega</h3>
-      <hr />
+      <h1>Formulário | Endereço de Entrega</h1>
       <form>
-        <div className="container-input">
-          <label>Nome Completo</label>
-          <input
-            id="nome"
-            type={"text"}
-            placeholder={"Ex.: Wendell Thomas Teske"}
-          />
+        <div className="line-1">
+          <div className="input-container">
+            <label>Nome Completo</label>
+            <input id="nome" type={"text"} placeholder={"Ex.: Wendell Teske"} />
+          </div>
+          <div className="input-container">
+            <label>Email</label>
+            <input
+              id="email"
+              type={"text"}
+              placeholder={"Ex.: wendelltteske@gmail.com"}
+            />
+          </div>
         </div>
-        <div className="container-input">
-          <label>Email</label>
-          <input
-            id="email"
-            type={"email"}
-            placeholder={"Ex.: wendelltteske@gmail.com"}
-          />
+        <div className="line-2">
+          <div className="input-container">
+            <label>Data de Entrega</label>
+            <input id="data_entrega" type={"date"} />
+          </div>
+          <div className="input-container">
+            <label>CEP</label>
+            <input
+              id="cep"
+              type={"text"}
+              placeholder={"__  __  __  __  __ - __  __  __"}
+              onBlur={checkarCEP}
+            />
+          </div>
         </div>
-        <div className="container-input">
-          <label>Data de Entrega</label>
-          <input id="data_entrega" type={"date"} />
+        <div className="line-3">
+          <div className="input-container">
+            <label>Estado</label>
+            <input id="uf" type={"text"} disabled />
+          </div>
+          <div className="input-container">
+            <label>Cidade</label>
+            <input id="localidade" type={"text"} disabled />
+          </div>
+          <div className="input-container">
+            <label>Bairro</label>
+            <input id="bairro" type={"text"} disabled />
+          </div>
         </div>
-        <div className="container-input">
-          <label>CEP</label>
-          <input
-            id="cep"
-            onBlur={checkarCEP}
-            type={"text"}
-            placeholder={"_ _ _ _ _ - _ _"}
-          />
-        </div>
-        <div className="container-input">
-          <label>Estado</label>
-          <input id="uf" type={"text"} disabled />
-        </div>
-        <div className="container-input">
-          <label>Cidade</label>
-          <input id="localidade" type={"text"} disabled />
-        </div>
-        <div className="container-input">
-          <label>Bairro</label>
-          <input id="bairro" type={"text"} disabled />
-        </div>
-        <div className="container-input">
-          <label>N de Endereço</label>
-          <input id="n_endereco" type={"number"} placeholder={"Ex.: 000"} />
-        </div>
-        <div className="container-input">
-          <label>Complemento</label>
-          <input
-            id="complemento"
-            type={"text"}
-            placeholder={"Ex.: Posto de Saúde"}
-          />
+        <div className="line-4">
+          <div className="x">
+            <label>Número de Endereço</label>
+            <input id="num_endereco" type={"text"} placeholder={"Ex.: 474"} />
+          </div>
+          <div className="input-container">
+            <label>Complemento</label>
+            <input
+              id="complemento"
+              type={"text"}
+              placeholder={"Ex.: Posto de Saúde"}
+            />
+          </div>
         </div>
       </form>
-      <div className="container-buttons">
-        <button onClick={clearData}>Limpar Campos</button>
-        <button>Enviar</button>
+      <div className="button-container">
+        <button className="previous" onClick={clearData}>
+          Limpar Campos
+        </button>
+        <button className="send">Enviar</button>
       </div>
     </div>
   );
