@@ -35,19 +35,19 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Formulário | Endereço de Entrega</h1>
+      <h1>Formulário Endereço de Entrega</h1>
       <form>
         <div className="line-1">
           <div className="input-container">
             <label>Nome Completo</label>
-            <input id="nome" type={"text"} placeholder={"Ex.: Wendell Teske"} />
+            <input id="nome" type={"text"} placeholder={"Ex.: Fernanda Dias"} />
           </div>
           <div className="input-container">
             <label>Email</label>
             <input
               id="email"
               type={"text"}
-              placeholder={"Ex.: wendelltteske@gmail.com"}
+              placeholder={"Ex.: fed@gmail.com"}
             />
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function App() {
             <input
               id="cep"
               type={"text"}
-              placeholder={"__  __  __  __  __ - __  __  __"}
+              placeholder={"XXXXX-XXX"}
               onBlur={checkarCEP}
             />
           </div>
@@ -82,8 +82,8 @@ export default function App() {
         </div>
         <div className="line-4">
           <div className="input-container" style={{ width: "30%" }}>
-            <label>Número de Endereço</label>
-            <input id="num_endereco" type={"text"} placeholder={"Ex.: 474"} />
+            <label>Nº de Endereço</label>
+            <input id="num_endereco" type={"text"} placeholder={"Ex.: 000"} />
           </div>
           <div className="input-container">
             <label>Complemento</label>

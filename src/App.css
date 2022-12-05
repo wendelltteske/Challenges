@@ -62,7 +62,7 @@ input {
   background-color: #fafafa;
   font-size: 16px;
   padding: 2.5%;
-  padding-left: 5px;
+  padding-left: 12px;
   padding-bottom: 1.75%;
   height: 100%;
   border: none;
@@ -111,7 +111,6 @@ input[type="date"] {
 
 .line-4 .input-container #num_endereco {
   margin-top: 3px;
-  padding: 4.4%;
 }
 
 .button-container {
