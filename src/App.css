@@ -1,3 +1,40 @@
 .container {
   text-align: center;
 }
+
+hr {
+  width: 25%;
+}
+
+.container-input {
+  max-width: 600px;
+  margin: auto;
+  width: 50%;
+  padding: 0.4rem;
+  margin-bottom: 1.5%;
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0.3rem;
+}
+
+.container-input label {
+  margin-right: 1%;
+}
+
+.container-input input {
+  width: 60%;
+  padding: 0.5rem;
+}
+
+.container-buttons {
+  background-color: red;
+  width: 32%;
+  display: flex;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+.container-buttons button {
+  width: 50%;
+  padding: 0.75rem;
+}
