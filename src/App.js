@@ -20,6 +20,18 @@ export default function App() {
       });
   };
 
+  const clearData = () => {
+    document.getElementById("nome").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("data_entrega").value = "";
+    document.getElementById("cep").value = "";
+    document.getElementById("uf").value = "";
+    document.getElementById("localidade").value = "";
+    document.getElementById("bairro").value = "";
+    document.getElementById("n_endereco").value = "";
+    document.getElementById("complemento").value = "";
+  };
+
   return (
     <div className="container">
       <h3>Formulário | Endereço de Entrega</h3>
@@ -68,7 +80,7 @@ export default function App() {
         </div>
         <div className="container-input">
           <label>N de Endereço</label>
-          <input type={"number"} placeholder={"Ex.: 000"} />
+          <input id="n_endereco" type={"number"} placeholder={"Ex.: 000"} />
         </div>
         <div className="container-input">
           <label>Complemento</label>
@@ -80,7 +92,7 @@ export default function App() {
         </div>
       </form>
       <div className="container-buttons">
-        <button>Limpar Campos</button>
+        <button onClick={clearData}>Limpar Campos</button>
         <button>Enviar</button>
       </div>
     </div>
