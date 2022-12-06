@@ -1,5 +1,5 @@
 import "./App.css";
-import { FaRegPaperPlane, FaRegTimesCircle } from "react-icons/fa";
+import { FaRegPaperPlane, FaEraser } from "react-icons/fa";
 
 export default function App() {
   const showData = (result) => {
@@ -97,10 +97,15 @@ export default function App() {
       </form>
       <div className="button-container">
         <button className="previous" onClick={clearData}>
-          <FaRegTimesCircle style={{ marginRight: "10px" }} />
+          <FaEraser style={{ marginRight: "10px" }} />
           Limpar Campos
         </button>
-        <button className="send">
+        <button
+          className="send"
+          onClick={() => {
+            alert("Formulário enviado com sucesso!");
+          }}
+        >
           <FaRegPaperPlane style={{ marginRight: "10px" }} />
           Enviar
         </button>

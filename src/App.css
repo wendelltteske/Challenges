@@ -7,6 +7,7 @@ body {
   margin: auto;
   width: 80%;
   height: 85vh;
+  max-height: 800px;
   padding: 5px;
   border-radius: 12px;
   border-bottom: 12px solid #00adc5;
@@ -99,6 +100,10 @@ input[type="date"] {
   width: 30%;
 }
 
+.line-3 .input-container input {
+  cursor: not-allowed;
+}
+
 .line-4 {
   display: flex;
   justify-content: space-between;
@@ -140,6 +145,7 @@ input[type="date"] {
 
 .button-container .previous:hover {
   background-color: #fafafa;
+  transition: all 0.5s linear 0s;
 }
 
 .button-container .send {
@@ -149,4 +155,5 @@ input[type="date"] {
 
 .button-container .send:hover {
   background-color: #00adc5;
+  transition: all 0.5s linear 0s;
 }
