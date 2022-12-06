@@ -104,6 +104,7 @@ export default function App() {
           className="send"
           onClick={() => {
             alert("Formulário enviado com sucesso!");
+            clearData();
           }}
         >
           <FaRegPaperPlane style={{ marginRight: "10px" }} />
